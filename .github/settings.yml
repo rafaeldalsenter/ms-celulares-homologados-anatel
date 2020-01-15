@@ -1,0 +1,44 @@
+repository:
+  name: ms-celulares-homologados-anatel
+  description: 📴 Microservice de consulta a base de dados de celulares homologados pela Anatel
+  private: true
+  has_issues: false
+  has_wiki: false
+  has_downloads: true
+  default_branch: master
+  allow_squash_merge: false
+  allow_merge_commit: true
+  allow_rebase_merge: false
+teams:
+  - name: devops
+    permission: admin
+  - name: engenharia
+    permission: push
+  - name: pms
+    permission: pull
+  - name: qa
+    permission: push
+  - name: release-management
+    permission: push
+branches:
+  - name: master
+    protection:
+      enforce_admins: false
+      restrictions:
+        teams: [devops, release-management]
+  - name: 'release*'
+    protection:
+      required_pull_request_reviews:
+        required_approving_review_count: 2
+        dismiss_stale_reviews: true
+        require_code_owner_reviews: true
+      enforce_admins: false
+      restrictions:
+        teams: [release-management]
+  - name: '*feature*'
+    protection:
+      required_pull_request_reviews:
+        required_approving_review_count: 2
+        dismiss_stale_reviews: true
+        require_code_owner_reviews: true
+      enforce_admins: false
