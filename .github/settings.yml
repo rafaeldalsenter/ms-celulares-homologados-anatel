@@ -1,7 +1,7 @@
 repository:
   name: ms-celulares-homologados-anatel
   description: 📴 Microservice de consulta a base de dados de celulares homologados pela Anatel
-  private: true
+  private: false
   has_issues: false
   has_wiki: false
   has_downloads: true
