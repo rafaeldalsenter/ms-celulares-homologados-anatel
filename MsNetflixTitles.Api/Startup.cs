@@ -1,9 +1,11 @@
+using Cassandra.Mapping;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using MsNetflixTitles.Api.Configs;
 using System;
 
 namespace MsNetflixTitles.Api
@@ -17,6 +19,8 @@ namespace MsNetflixTitles.Api
         {
             Configuration = configuration;
             _ioc = new IocStartup();
+
+            MappingConfiguration.Global.Define<MapperCassandraContext>();
         }
 
         public void ConfigureServices(IServiceCollection services)

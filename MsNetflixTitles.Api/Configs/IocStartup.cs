@@ -3,7 +3,7 @@ using MsNetflixTitles.Application.Repositories;
 using MsNetflixTitles.Application.Services;
 using MsNetflixTitles.CrossCutting;
 
-namespace MsNetflixTitles.Api
+namespace MsNetflixTitles.Api.Configs
 {
     public class IocStartup
     {
